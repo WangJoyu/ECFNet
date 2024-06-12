@@ -12,7 +12,7 @@ from RGBT_Net import RGBTNet
 if __name__ == '__main__':
     torch.cuda.set_device(0)
     model = RGBTNet(num_classes=9, pretrained_on_imagenet=False).to('cuda:0')
-    state_dict = torch.load('./runs/RGBTNet/RGB-T 2022-10-08-9/78.pth', map_location='cpu')
+    state_dict = torch.load('./checkpoint/ECFNet_best.pth', map_location='cpu')
     # state_dict = torch.load('./233.pth', map_location='cpu')
     model.load_state_dict(state_dict, strict=True)
 
